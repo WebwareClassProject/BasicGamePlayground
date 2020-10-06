@@ -272,6 +272,8 @@ const handlePlayerDeath = function (msg) {
 
 app.use(express.static(__dirname + "/public"));
 
+
+// initialize channels and channel-listeners
 realtime.connection.once("connected", () => {
     gameRoom = realtime.channels.get("game-room");
     deadPlayerCh = realtime.channels.get("dead-player");
